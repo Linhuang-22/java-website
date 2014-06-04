@@ -140,5 +140,70 @@ public class User {
 			DB.closeConn(conn);
 		}
 	}
+	
+	/*
+	public static boolean userExists(String username){
+		return false;
+	}
+	
+	public static boolean isPasswordCorrect(String username,String password){
+		return false;
+		
+	}
+	*/
+	
+	public static User validate(String username,String password) throws UserNotFoundException, PasswordNotCorrectException{
+		//判断登陆时用户名是否存在及用户密码是否正确
+		Connection conn = null;
+		ResultSet rs = null;
+		User u = null;
+		try {
+			conn = DB.getConn();
+			String sql="select * from user where username = '" + username + "'";
+			rs = DB.executeQuery(conn, sql);
+			if (!rs.next()){
+				throw new UserNotFoundException();
+			} else if(!rs.getString("password").equalsIgnoreCase(password) ){
+				throw new PasswordNotCorrectException();
+			} else {
+				u=new User();
+				u.setId(rs.getInt("ID"));
+				u.setUsername(rs.getString("username"));
+				u.setPassword(rs.getString("password"));
+				u.setPhone(rs.getString("phone"));
+				u.setAddr(rs.getString("addr"));
+				u.setRdate(rs.getString("rdate"));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally{
+			DB.closeRs(rs);
+			DB.closeConn(conn);
+		}
+		
+		return u;
+	}
+	
+	public void update(){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DB.getConn();
+			String sql = "update user set username = ?, phone = ?, addr = ? where id =" + this.id;
+			pstmt=DB.prepare(conn, sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, phone);
+			pstmt.setString(3, addr);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			DB.closeStmt(pstmt);
+			DB.closeConn(conn);
+		}
+	}
 
 }
