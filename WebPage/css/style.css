@@ -558,17 +558,245 @@ table {
 body {
 	font-family: "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
 }
-
+a {
+	text-decoration: none;
+}
+ul,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 .container {
 	width: 1000px;
 	margin: 0 auto;
 }
+header {
+	background: #f1f1f1;
+}
+header .container {
+	padding: 24px 0;
+}
 .logo {
 	float: left;
+}
+.logo a {
+	display: block;
 }
 .welcome {
 	float: right;
 }
+.welcome p {
+	margin: 0;
+	height: 33px;
+	line-height: 33px;
+	color: #525252;
+}
+.welcome a {
+	color: #525252;
+}
+nav {
+	background: #dc291e;
+}
+nav .container {
+	padding: 0;
+}
+nav li {
+	display: inline-block;
+}
+nav a {
+	display: block;
+	padding: 1em;
+	color: #F1F1F1;
+}
+nav a:hover,
+nav a.active {
+	color: #fff;
+	background: #e74c3c;
+}
+/* focus CSS */
+.focus {
+    height: 244px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 0;
+}
+.focus ul {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0;
+}
+.focus ul li {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+.focus ul li img {
+    position: absolute;
+}
+.focus ul li div {
+    position: absolute;
+    overflow: hidden;
+}
+/*.focus .btnBg {position:absolute; width:800px; height:20px; left:0; bottom:0; background:#000; display:none;}*/
+.focus .btn {
+    position:absolute;
+    /*width:780px;
+    height:23px;*/
+    padding: 0px 10px 0px 10px;
+    left: 50%;
+    bottom: 10px;
+    /*text-align:right;*/
+}
+.focus .btn span {
+    display:inline-block;
+    /*_display:inline;
+    _zoom:1;*/
+    width:16px;
+    height:16px;
+    /*line-height:12px;
+    text-align:center;*/
+    _font-size:0;
+    margin: 0px 6px;
+    cursor:pointer;
+    background:#bdc3c7;
+    -webkit-border-radius:8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.focus .btn span.on {
+    background: #fff;
+}
+.focus .preNext {
+    width:45px;
+    height:100px;
+    position:absolute;
+    top: 50%;
+    margin-top: -50px;
+    background:url(../images/sprite.png) no-repeat 0 0;
+    cursor:pointer;
+}
+.focus .pre {
+    left:0;
+}
+.focus .next {
+    right:0;
+    background-position:right top;
+}
 .notice {
-	
+	position: relative;
+	margin-bottom: 10px;
+	/*padding-left: 10px;*/
+	height: 40px;
+	overflow: hidden;
+	background: #f1f1f1;
+	border: 1px solid #ccc;
+}
+.notice h1 {
+	position: absolute;
+	left: 10px;
+	margin: 0;
+	width: 85px;
+	height: 40px;
+	font-size: 1em;
+	line-height: 40px;
+}
+.notice ul {
+	position: absolute;
+	left: 95px;
+}
+.notice ul li {
+	height: 40px;
+	line-height: 40px;
+}
+.main {
+	float: right;
+	width: 801px;
+}
+.detail {
+	margin-bottom: 10px;
+}
+.detail h1 {
+	margin: 0;
+	height: 42px;
+	line-height: 42px;
+	font-size: 1.125em;
+	border-bottom: 2px solid #dc291e;
+}
+.detail ul {
+	float: left;
+	border-left: 1px solid #ccc;
+}
+.detail ul li {
+	float: left;
+	width: 199px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.detail a {
+	display: block;
+	height: 249px;
+	color: #000;
+	overflow: hidden;
+}
+.detail a:hover {
+	height: 247px;
+	border: 1px solid #dc291e;
+}
+.detail a img {
+	width: 100%;
+}
+.detail a span {
+	display: block;
+	text-align: center;
+}
+.price {
+	color: #dc291e;
+}
+.configuration {
+	font-size: .875em;
+}
+aside {
+	float: left;
+	width: 186px;
+}
+aside section {
+	margin-bottom: 10px;
+	border: 2px solid #dc291e;
+}
+aside h1 {
+	margin: 0;
+	padding-left: 10px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 1.125em;
+	color: #fff;
+	background: #dc291e;
+}
+aside ul li:nth-child(2n-1) {
+	background: #f1f1f1;
+}
+aside ul a {
+	display: block;
+	padding-left: 10px;
+	height: 2em;
+	line-height: 2em;
+	color: #000;
+}
+aside ul li a:hover {
+	color: #dc291e;
+}
+footer {
+	background: #f1f1f1;
+	border-top: 1px solid #ccc;
+}
+footer p {
+	margin: 0;
+	padding: 1em 0;
+	color: #f1f1f1;
+	text-align: center;
+	background: #ccc;
 }
