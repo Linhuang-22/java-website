@@ -571,6 +571,7 @@ ul,li {
 	margin: 0 auto;
 }
 header {
+	margin-bottom: 10px;
 	background: #f1f1f1;
 }
 header .container {
@@ -618,7 +619,7 @@ nav a.active {
     height: 244px;
     overflow: hidden;
     position: relative;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 .focus ul {
     width: 100%;
@@ -786,7 +787,8 @@ aside ul a {
 	line-height: 2em;
 	color: #000;
 }
-aside ul li a:hover {
+aside ul li a:hover,
+aside ul li a.active {
 	color: #dc291e;
 }
 footer {

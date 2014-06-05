@@ -75,21 +75,41 @@
 	};
 })(jQuery);
 
-var notice = $("#notice");
-$(function(){
-	notice.hover(function(){
-		window.clearTimeout(status_timer);
-	},function () {
-		status_timer=window.setTimeout("status_scroll()",5000);
-	});
-	status_timer=window.setTimeout("status_scroll()",1000);	
-})
+(function() {
+	jQuery.notice = function(notice) {
+		var status_timer;  //设置计时器
+		$(notice).hover(function(){
+			window.clearTimeout(status_timer);
+		},function () {
+			status_timer=window.setTimeout(status_scroll,5000);
+		});
+		status_timer=window.setTimeout(status_scroll,1000);
+		
+		function status_scroll(){
+			$(notice).children("ul").animate({top:"-40px"},1000,function(){
+				$(notice).find("li:first").appendTo(notice + " ul");
+				$(notice).children("ul").css("top","0");
+			});
+			status_timer=window.setTimeout(status_scroll,5000);//轮换速度
+		}
+	}
+})(jQuery);
 
-var status_timer;
-function status_scroll(){
-	notice.children("ul").animate({top:"-40px"},1000,function(){
-		notice.find("li:first").appendTo("#notice ul");
-		notice.children("ul").css("top","0");
-	});
-	status_timer=window.setTimeout("status_scroll()",5000);//轮换速度
-}
+//var notice = $("#notice");
+//$(function(){
+//	notice.hover(function(){
+//		window.clearTimeout(status_timer);
+//	},function () {
+//		status_timer=window.setTimeout("status_scroll()",5000);
+//	});
+//	status_timer=window.setTimeout("status_scroll()",1000);	
+//})
+//
+//var status_timer;
+//function status_scroll(){
+//	notice.children("ul").animate({top:"-40px"},1000,function(){
+//		notice.find("li:first").appendTo("#notice ul");
+//		notice.children("ul").css("top","0");
+//	});
+//	status_timer=window.setTimeout("status_scroll()",5000);//轮换速度
+//}
