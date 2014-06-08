@@ -602,17 +602,32 @@ nav .container {
 	padding: 0;
 }
 nav li {
+	position: relative;
 	display: inline-block;
 }
 nav a {
 	display: block;
-	padding: 1em;
+	width: 6em;
+	padding: 1em 0;
 	color: #F1F1F1;
+	text-align: center;
 }
+nav li:hover a,
 nav a:hover,
 nav a.active {
 	color: #fff;
 	background: #e74c3c;
+}
+nav ul.second {
+	position: absolute;
+	z-index: 1;
+	display: none;
+}
+nav li:hover ul.second {
+	display: block;
+}
+nav ul.second > li {
+	border-top: 1px solid #dc291e;
 }
 /* focus CSS */
 .focus {
@@ -765,8 +780,12 @@ aside {
 	width: 186px;
 }
 aside section {
+	width: 182px;
 	margin-bottom: 10px;
 	border: 2px solid #dc291e;
+}
+aside section.fixed {
+	top: 1px;
 }
 aside h1 {
 	margin: 0;

@@ -95,6 +95,18 @@
 	}
 })(jQuery);
 
+$(document).ready(function() {
+	var $hotsale = $("#hotsale");
+	var top = $hotsale.offset().top;
+	$(window).scroll(function() {
+		if ($(window).scrollTop() > top) {
+			$hotsale.addClass("fixed");
+		} else if ( ($(window).scrollTop() < top) && ($hotsale.css("position") == "fixed") ) {
+			$hotsale.removeClass("fixed");
+		}
+	});
+});
+
 //var notice = $("#notice");
 //$(function(){
 //	notice.hover(function(){

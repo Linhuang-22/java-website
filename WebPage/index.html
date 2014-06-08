@@ -8,7 +8,7 @@
     <!-- enable HTML5 elements in IE -->
     <!--[if lt IE 9]>
     <link rel="stylesheet" type="text/css" href="css/ie.css" />
-    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="script/html5.js"></script>
     <![endif]-->
 </head>
 
@@ -23,11 +23,24 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-		<nav>
-			<div class="container" role="navigation">
-				<ul>
+		<nav role="navigation">
+			<div class="container">
+				<ul class="first">
 					<li><a class="active" href="#">商城首页</a></li>
-					<li><a href="#">所有产品</a></li>
+					<li>
+						<a href="#">所有产品</a>
+						<ul class="second">
+							<li>
+								<a href="#">分类一</a>
+							</li>
+							<li>
+								<a href="#">分类二</a>
+							</li>
+							<li>
+								<a href="#">分类二</a>
+							</li>
+						</ul>
+					</li>
 					<li><a href="#">售后服务</a></li>
 				</ul>
 			</div>
@@ -129,14 +142,14 @@
 			</section>
 		</article>
 		<aside>
-			<section id="classify">
+			<!--section id="classify">
 				<h1>所有分类</h1>
 				<ul>
 					<li><a href="javascript:;">分类一</a></li>
 					<li><a href="javascript:;">分类二</a></li>
 					<li><a href="javascript:;">分类三</a></li>
 				</ul>
-			</section>
+			</section-->
 			<section id="hotsale">
 				<h1>热销榜</h1>
 				<ul>
@@ -154,8 +167,8 @@
 		</div>
 		<p>版权所有：1998－2014 联想官网商城 │ 京ICP备11035381</p>
 	</footer>
-<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="script/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript" src="script/script.js"></script>
 <script type="text/javascript">
 	$.focus("#focus");
 	$.notice("#notice");
