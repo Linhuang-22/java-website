@@ -83,7 +83,7 @@ public class DB {
 		}
 	}
 	
-	public static void close(Connection conn) {
+	public static void closeConn(Connection conn) {
 		try {
 			if(conn != null) {
 				conn.close();
@@ -94,7 +94,7 @@ public class DB {
 		}
 	}
 	
-	public static void close(Statement stmt) {
+	public static void closeStmt(Statement stmt) {
 		try {
 			if(stmt != null) {
 				stmt.close();
@@ -105,7 +105,7 @@ public class DB {
 		}
 	}
 	
-	public static void close(ResultSet rs) {
+	public static void closeRs(ResultSet rs) {
 		try {
 			if(rs != null) {
 				rs.close();
@@ -115,4 +115,28 @@ public class DB {
 			e.printStackTrace();
 		}
 	}
+	
+	public static ResultSet executeQuery(Connection conn, String sql) {
+		ResultSet rs = null;
+		try {
+			rs= conn.createStatement().executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
+
+	public static void executeUpdate1(Connection conn, String sql) {
+		// TODO Auto-generated method stub
+		Statement stmt = null;
+		try {
+			stmt=conn.createStatement();
+			if(stmt != null) {
+				stmt.executeUpdate(sql);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

@@ -97,7 +97,7 @@ if (action != null && action.equals("register")){
 </td>
     </tr></tbody></table>
 <table style="table-layout: fixed;" align="center" border="0" cellpadding="0" cellspacing="0" width="97%"> 
-<tbody><tr><td class="nav" align="left" nowrap="nowrap" width="90%">&nbsp;&#37329;&#23578;&#21830;&#22478; &#187; 注册</td>
+<tbody><tr><td class="nav" align="left" nowrap="nowrap" width="90%">&nbsp;联想笔记本销售网上商城>>注册</td>
 <td align="right" width="10%">&nbsp;<a href="#bottom"><img src="images/arrow_dw.gif" align="absmiddle" border="0"></a></td>        
 </tr></tbody></table><br>
 
@@ -153,8 +153,8 @@ document.register.username.focus();
 <br>
 <a name="bottom"></a>
 
-<a target="_blank" href="http://www.thinkpadclub.com.cn/"><u>金尚商城</u></a><br>
-服务热线:010-58052712
+<a target="_blank" href="http://www.thinkpadclub.com.cn/"><u>商城主页</u></a><br>
+服务热线:010-12345678
 <!--<br><font color=#ebebeb>
 Powered by <a href="http://www.discuz.net" target="_blank"><font color=#ebebeb>Discuz!</font></a> 
 <a href="misc.php?action=viewlicense"><b style="color:#ebebeb">4.0.0RC4</b></a>&nbsp;
