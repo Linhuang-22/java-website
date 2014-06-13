@@ -851,17 +851,25 @@ aside ul li a.active {
 	margin: 1em auto;
 	border: 1px solid #ccc;
 }
+.address {
+	height: 6em;
+}
 .input span {
 	position: absolute;
 	left: 5%;
 	line-height: 2em;
 	color: #525252;
 }
-.input input {
+.input input,
+.input textarea {
 	position: absolute;
 	display: block;
 	width: 95%;
-	height: 2em;
+	height: 100%;
+	max-width: 95%;
+	max-height: 100%;
+	resize: none;
+	
 	padding: 0;
 	padding-left: 5%;
 	line-height: 2em;

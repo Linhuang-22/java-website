@@ -97,7 +97,7 @@
 
 (function() {
 	jQuery.regInput = function(regInput) {
-		var $in = $(regInput).children("input");
+		var $in = $(regInput).children("input,textarea");
 		$in.focus(function() {
 			$(this).siblings("span").hide();
 		})
