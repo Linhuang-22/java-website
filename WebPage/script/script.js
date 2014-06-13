@@ -116,7 +116,7 @@
 
 $(document).ready(function() {
 	var $hotsale = $("#hotsale");
-	if (!$hotsale) {
+	if (!!$hotsale) {
 		var top = $hotsale.offset().top;
 		$(window).scroll(function() {
 			if ($(window).scrollTop() > top) {
