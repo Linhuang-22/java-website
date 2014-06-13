@@ -116,7 +116,7 @@
 
 $(document).ready(function() {
 	var $hotsale = $("#hotsale");
-	if (!!$hotsale) {
+	if (!!$hotsale.html()) {
 		var top = $hotsale.offset().top;
 		$(window).scroll(function() {
 			if ($(window).scrollTop() > top) {
@@ -127,7 +127,7 @@ $(document).ready(function() {
 		});
 	}
 	var $tag = $(".reg");
-	if (!!$tag) {
+	if (!!$tag.html()) {
 		$tag.find("li a").on("click", function() {
 			$(this).addClass("active").parent().siblings().children("a").removeClass("active");
 			$($tag.find(".reg-con").get($(this).parent().index())).css("display", "block").siblings(".reg-con").hide();
