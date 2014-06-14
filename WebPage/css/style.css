@@ -556,7 +556,7 @@ table {
 }
 
 body {
-	font-family: "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体";
+	font-family: "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体" !important;
 }
 a {
 	text-decoration: none;
@@ -809,6 +809,86 @@ aside ul a {
 aside ul li a:hover,
 aside ul li a.active {
 	color: #dc291e;
+}
+
+.reg {
+	width: 400px;
+	margin: 5em auto;
+}
+.reg nav,
+.reg nav ul {
+	float: left;
+	width: 100%;
+	background: #f1f1f1;
+}
+.reg nav li {
+	display: block;
+	float: left;
+	width: 50%;
+}
+.reg nav a {
+	width: 100%;
+	color: #525252;
+}
+.reg nav a:hover {
+	color: #e74c3c;
+	background: #f1f1f1;
+}
+.reg nav a.active,
+.reg nav a.active:hover {
+	color: #fff;
+	background: #e74c3c;
+}
+.reg-con {
+	display: none;
+	clear: both;
+	border: 2px solid #e74c3c;
+}
+.input {
+	position: relative;
+	width: 80%;
+	height: 2em;
+	margin: 1em auto;
+	border: 1px solid #ccc;
+}
+.address {
+	height: 6em;
+}
+.input span {
+	position: absolute;
+	left: 5%;
+	line-height: 2em;
+	color: #525252;
+}
+.input input,
+.input textarea {
+	position: absolute;
+	display: block;
+	width: 95%;
+	height: 100%;
+	max-width: 95%;
+	max-height: 100%;
+	resize: none;
+	
+	padding: 0;
+	padding-left: 5%;
+	line-height: 2em;
+	background: none;
+	border: none;
+}
+input.submit {
+	display: block;
+	width: 80%;
+	height: 2em;
+	margin: 1em auto;
+	padding: 0;
+	color: #f1f1f1;
+	border: none;
+	background: #dc291e;
+}
+input.submit:hover {
+	color: #fff;
+	background: #e74c3c;
 }
 footer {
 	background: #f1f1f1;

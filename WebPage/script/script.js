@@ -95,33 +95,43 @@
 	}
 })(jQuery);
 
+(function() {
+	jQuery.regInput = function(regInput) {
+		var $in = $(regInput).children("input,textarea");
+		$in.focus(function() {
+			$(this).siblings("span").hide();
+		})
+		$in.focusout(function() {
+			if (!$(this).val()) {
+				$(this).siblings("span").show();
+			}
+		})
+		$in.each(function() {
+			if ($(this).val()) {
+				$(this).siblings("span").hide();
+			}
+		})
+	}
+})(jQuery);
+
 $(document).ready(function() {
 	var $hotsale = $("#hotsale");
-	var top = $hotsale.offset().top;
-	$(window).scroll(function() {
-		if ($(window).scrollTop() > top) {
-			$hotsale.addClass("fixed");
-		} else if ( ($(window).scrollTop() < top) && ($hotsale.css("position") == "fixed") ) {
-			$hotsale.removeClass("fixed");
-		}
-	});
+	if (!!$hotsale.html()) {
+		var top = $hotsale.offset().top;
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > top) {
+				$hotsale.addClass("fixed");
+			} else if ( ($(window).scrollTop() < top) && ($hotsale.css("position") == "fixed") ) {
+				$hotsale.removeClass("fixed");
+			}
+		});
+	}
+	var $tag = $(".reg");
+	if (!!$tag.html()) {
+		$tag.find("li a").on("click", function() {
+			$(this).addClass("active").parent().siblings().children("a").removeClass("active");
+			$($tag.find(".reg-con").get($(this).parent().index())).css("display", "block").siblings(".reg-con").hide();
+			return false;
+		})
+	}
 });
-
-//var notice = $("#notice");
-//$(function(){
-//	notice.hover(function(){
-//		window.clearTimeout(status_timer);
-//	},function () {
-//		status_timer=window.setTimeout("status_scroll()",5000);
-//	});
-//	status_timer=window.setTimeout("status_scroll()",1000);	
-//})
-//
-//var status_timer;
-//function status_scroll(){
-//	notice.children("ul").animate({top:"-40px"},1000,function(){
-//		notice.find("li:first").appendTo("#notice ul");
-//		notice.children("ul").css("top","0");
-//	});
-//	status_timer=window.setTimeout("status_scroll()",5000);//轮换速度
-//}
