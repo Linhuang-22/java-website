@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=GB18030"
-    pageEncoding="GB18030"%>
+ï»¿<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!doctype html>
 <html lang="zh-cn">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>ÁªÏëÍøÉÏÉÌ³Ç</title>
+	<title>è”æƒ³ç½‘ä¸Šå•†åŸŽ</title>
 	<link href="css/style.css" rel="stylesheet" />
     <!-- enable HTML5 elements in IE -->
     <!--[if lt IE 9]>
@@ -18,19 +18,32 @@
 	<header>
 		<div class="container">
 			<div class="logo">
-				<a href="#"><img src="images/logo.jpg" alt="ÁªÏëÍøÉÏÉÌ³Ç" title="ÁªÏëÍøÉÏÉÌ³Ç" /></a>
+				<a href="#"><img src="images/logo.jpg" alt="è”æƒ³ç½‘ä¸Šå•†åŸŽ" title="è”æƒ³ç½‘ä¸Šå•†åŸŽ" /></a>
 			</div>
 			<div class="welcome">
-				<p>»¶Ó­ÄúÀ´µ½ÁªÏëÍøÉÏÉÌ³Ç£¡Çë <a href="#">[µÇÂ¼]</a> »òÕß <a href="#">[Ãâ·Ñ×¢²á]</a></p>
+				<p>æ¬¢è¿Žæ‚¨æ¥åˆ°è”æƒ³ç½‘ä¸Šå•†åŸŽï¼è¯· <a href="loginOrReg.jsp">[ç™»å½•]</a> æˆ–è€… <a href="loginOrReg.jsp">[å…è´¹æ³¨å†Œ]</a></p>
 			</div>
 			<div class="clear"></div>
 		</div>
-		<nav>
-			<div class="container" role="navigation">
-				<ul>
-					<li><a class="active" href="#">ÉÌ³ÇÊ×Ò³</a></li>
-					<li><a href="#">ËùÓÐ²úÆ·</a></li>
-					<li><a href="#">ÊÛºó·þÎñ</a></li>
+		<nav role="navigation">
+			<div class="container">
+				<ul class="first">
+					<li><a class="active" href="#">å•†åŸŽé¦–é¡µ</a></li>
+					<li>
+						<a href="#">æ‰€æœ‰äº§å“</a>
+						<ul class="second">
+							<li>
+								<a href="#">åˆ†ç±»ä¸€</a>
+							</li>
+							<li>
+								<a href="#">åˆ†ç±»äºŒ</a>
+							</li>
+							<li>
+								<a href="#">åˆ†ç±»äºŒ</a>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#">å”®åŽæœåŠ¡</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -38,92 +51,92 @@
 	<div class="container">
 		<div id="focus" class="focus">
 			<ul>
-				<li><img src="images/banner1.jpg" alt="Í¼Æ¬1" title="Í¼Æ¬1" /></li>
-				<li><img src="images/banner1.jpg" alt="Í¼Æ¬1" title="Í¼Æ¬1" /></li>
-				<li><img src="images/banner1.jpg" alt="Í¼Æ¬1" title="Í¼Æ¬1" /></li>
+				<li><img src="images/banner1.jpg" alt="å›¾ç‰‡1" title="å›¾ç‰‡1" /></li>
+				<li><img src="images/banner1.jpg" alt="å›¾ç‰‡1" title="å›¾ç‰‡1" /></li>
+				<li><img src="images/banner1.jpg" alt="å›¾ç‰‡1" title="å›¾ç‰‡1" /></li>
 			</ul>
 		</div>
 		<section id="notice" class="notice">
-			<h1>×îÐÂ¹«¸æ£º</h1>
+			<h1>æœ€æ–°å…¬å‘Šï¼š</h1>
 			<ul>
-				<li>6Ó¢´çìÅ¿á´óÆÁ9mmÏË±¡»úÉíA889ÐÂÏÊÉÏ¼Ü£¡</li>
+				<li>6è‹±å¯¸ç‚«é…·å¤§å±9mmçº¤è–„æœºèº«A889æ–°é²œä¸Šæž¶ï¼</li>
 				<li>22222222222222222</li>
 				<li>33333333333333333333</li>
 			</ul>
 		</section>
 		<article class="main" role="main">
-			<!-- Ò»¸ö·ÖÀàµÄ²úÆ·ÔÚÒ»¸ösectionÄÚ -->
+			<!-- ä¸€ä¸ªåˆ†ç±»çš„äº§å“åœ¨ä¸€ä¸ªsectionå†… -->
 			<section class="detail">
-				<h1>·ÖÀàÒ»</h1>
+				<h1>åˆ†ç±»ä¸€</h1>
 				<ul>
 					<li>
 						<a href="#">
-							<img src="images/laptop.jpg" alt="²úÆ·Ãû³Æ" title="²úÆ·Ãû³Æ" />
-							<span class="price">£¤5900</span>
-							<span class="name">Yoga2 13-ITH (ÈÕ¹â³È)</span>
-							<span class="configuration">µÚËÄ´úÖÇÄÜÓ¢ÌØ¶û0…3 ¿áî£ HaswellË«ºË´¦ÀíÆ÷</span>
+							<img src="images/laptop.jpg" alt="äº§å“åç§°" title="äº§å“åç§°" />
+							<span class="price">ï¿¥5900</span>
+							<span class="name">Yoga2 13-ITH (æ—¥å…‰æ©™)</span>
+							<span class="configuration">ç¬¬å››ä»£æ™ºèƒ½è‹±ç‰¹å°”Â® é…·ç¿ HaswellåŒæ ¸å¤„ç†å™¨</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="images/laptop.jpg" alt="²úÆ·Ãû³Æ" title="²úÆ·Ãû³Æ" />
-							<span class="price">£¤5900</span>
-							<span class="name">Yoga2 13-ITH (ÈÕ¹â³È)</span>
-							<span class="configuration">µÚËÄ´úÖÇÄÜÓ¢ÌØ¶û0…3 ¿áî£ HaswellË«ºË´¦ÀíÆ÷</span>
+							<img src="images/laptop.jpg" alt="äº§å“åç§°" title="äº§å“åç§°" />
+							<span class="price">ï¿¥5900</span>
+							<span class="name">Yoga2 13-ITH (æ—¥å…‰æ©™)</span>
+							<span class="configuration">ç¬¬å››ä»£æ™ºèƒ½è‹±ç‰¹å°”Â® é…·ç¿ HaswellåŒæ ¸å¤„ç†å™¨</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="images/laptop.jpg" alt="²úÆ·Ãû³Æ" title="²úÆ·Ãû³Æ" />
-							<span class="price">£¤5900</span>
-							<span class="name">Yoga2 13-ITH (ÈÕ¹â³È)</span>
-							<span class="configuration">µÚËÄ´úÖÇÄÜÓ¢ÌØ¶û0…3 ¿áî£ HaswellË«ºË´¦ÀíÆ÷</span>
+							<img src="images/laptop.jpg" alt="äº§å“åç§°" title="äº§å“åç§°" />
+							<span class="price">ï¿¥5900</span>
+							<span class="name">Yoga2 13-ITH (æ—¥å…‰æ©™)</span>
+							<span class="configuration">ç¬¬å››ä»£æ™ºèƒ½è‹±ç‰¹å°”Â® é…·ç¿ HaswellåŒæ ¸å¤„ç†å™¨</span>
 						</a>
 					</li>
 				</ul>
 				<div class="clear"></div>
 			</section>
 			<section class="detail">
-				<h1>·ÖÀà¶þ</h1>
+				<h1>åˆ†ç±»äºŒ</h1>
 				<ul>
 					<li>
 						<a href="#">
-							<img src="images/laptop.jpg" alt="²úÆ·Ãû³Æ" title="²úÆ·Ãû³Æ" />
-							<span class="price">£¤5900</span>
-							<span class="name">Yoga2 13-ITH (ÈÕ¹â³È)</span>
-							<span class="configuration">µÚËÄ´úÖÇÄÜÓ¢ÌØ¶û0…3 ¿áî£ HaswellË«ºË´¦ÀíÆ÷</span>
+							<img src="images/laptop.jpg" alt="äº§å“åç§°" title="äº§å“åç§°" />
+							<span class="price">ï¿¥5900</span>
+							<span class="name">Yoga2 13-ITH (æ—¥å…‰æ©™)</span>
+							<span class="configuration">ç¬¬å››ä»£æ™ºèƒ½è‹±ç‰¹å°”Â® é…·ç¿ HaswellåŒæ ¸å¤„ç†å™¨</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="images/laptop.jpg" alt="²úÆ·Ãû³Æ" title="²úÆ·Ãû³Æ" />
-							<span class="price">£¤5900</span>
-							<span class="name">Yoga2 13-ITH (ÈÕ¹â³È)</span>
-							<span class="configuration">µÚËÄ´úÖÇÄÜÓ¢ÌØ¶û0…3 ¿áî£ HaswellË«ºË´¦ÀíÆ÷</span>
+							<img src="images/laptop.jpg" alt="äº§å“åç§°" title="äº§å“åç§°" />
+							<span class="price">ï¿¥5900</span>
+							<span class="name">Yoga2 13-ITH (æ—¥å…‰æ©™)</span>
+							<span class="configuration">ç¬¬å››ä»£æ™ºèƒ½è‹±ç‰¹å°”Â® é…·ç¿ HaswellåŒæ ¸å¤„ç†å™¨</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="images/laptop.jpg" alt="²úÆ·Ãû³Æ" title="²úÆ·Ãû³Æ" />
-							<span class="price">£¤5900</span>
-							<span class="name">Yoga2 13-ITH (ÈÕ¹â³È)</span>
-							<span class="configuration">µÚËÄ´úÖÇÄÜÓ¢ÌØ¶û0…3 ¿áî£ HaswellË«ºË´¦ÀíÆ÷</span>
+							<img src="images/laptop.jpg" alt="äº§å“åç§°" title="äº§å“åç§°" />
+							<span class="price">ï¿¥5900</span>
+							<span class="name">Yoga2 13-ITH (æ—¥å…‰æ©™)</span>
+							<span class="configuration">ç¬¬å››ä»£æ™ºèƒ½è‹±ç‰¹å°”Â® é…·ç¿ HaswellåŒæ ¸å¤„ç†å™¨</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="images/laptop.jpg" alt="²úÆ·Ãû³Æ" title="²úÆ·Ãû³Æ" />
-							<span class="price">£¤5900</span>
-							<span class="name">Yoga2 13-ITH (ÈÕ¹â³È)</span>
-							<span class="configuration">µÚËÄ´úÖÇÄÜÓ¢ÌØ¶û0…3 ¿áî£ HaswellË«ºË´¦ÀíÆ÷</span>
+							<img src="images/laptop.jpg" alt="äº§å“åç§°" title="äº§å“åç§°" />
+							<span class="price">ï¿¥5900</span>
+							<span class="name">Yoga2 13-ITH (æ—¥å…‰æ©™)</span>
+							<span class="configuration">ç¬¬å››ä»£æ™ºèƒ½è‹±ç‰¹å°”Â® é…·ç¿ HaswellåŒæ ¸å¤„ç†å™¨</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<img src="images/laptop.jpg" alt="²úÆ·Ãû³Æ" title="²úÆ·Ãû³Æ" />
-							<span class="price">£¤5900</span>
-							<span class="name">Yoga2 13-ITH (ÈÕ¹â³È)</span>
-							<span class="configuration">µÚËÄ´úÖÇÄÜÓ¢ÌØ¶û0…3 ¿áî£ HaswellË«ºË´¦ÀíÆ÷</span>
+							<img src="images/laptop.jpg" alt="äº§å“åç§°" title="äº§å“åç§°" />
+							<span class="price">ï¿¥5900</span>
+							<span class="name">Yoga2 13-ITH (æ—¥å…‰æ©™)</span>
+							<span class="configuration">ç¬¬å››ä»£æ™ºèƒ½è‹±ç‰¹å°”Â® é…·ç¿ HaswellåŒæ ¸å¤„ç†å™¨</span>
 						</a>
 					</li>
 				</ul>
@@ -131,20 +144,20 @@
 			</section>
 		</article>
 		<aside>
-			<section id="classify">
-				<h1>ËùÓÐ·ÖÀà</h1>
+			<!--section id="classify">
+				<h1>æ‰€æœ‰åˆ†ç±»</h1>
 				<ul>
-					<li><a href="javascript:;">·ÖÀàÒ»</a></li>
-					<li><a href="javascript:;">·ÖÀà¶þ</a></li>
-					<li><a href="javascript:;">·ÖÀàÈý</a></li>
+					<li><a href="javascript:;">åˆ†ç±»ä¸€</a></li>
+					<li><a href="javascript:;">åˆ†ç±»äºŒ</a></li>
+					<li><a href="javascript:;">åˆ†ç±»ä¸‰</a></li>
 				</ul>
-			</section>
+			</section-->
 			<section id="hotsale">
-				<h1>ÈÈÏú°ñ</h1>
+				<h1>çƒ­é”€æ¦œ</h1>
 				<ul>
-					<li><a href="#">²úÆ·Ò»</a></li>
-					<li><a href="#">²úÆ·¶þ</a></li>
-					<li><a href="#">²úÆ·Èý</a></li>
+					<li><a href="#">äº§å“ä¸€</a></li>
+					<li><a href="#">äº§å“äºŒ</a></li>
+					<li><a href="#">äº§å“ä¸‰</a></li>
 				</ul>
 			</section>
 		</aside>
@@ -154,7 +167,7 @@
 		<div class="container">
 			<img src="images/footer.png" />
 		</div>
-		<p>°æÈ¨ËùÓÐ£º1998£­2014 ÁªÏë¹ÙÍøÉÌ³Ç ©¦ ¾©ICP±¸11035381</p>
+		<p>ç‰ˆæƒæ‰€æœ‰ï¼š1998ï¼2014 è”æƒ³å®˜ç½‘å•†åŸŽ â”‚ äº¬ICPå¤‡11035381</p>
 	</footer>
 <script type="text/javascript" src="script/jquery-1.11.1.min.js" ></script>
 <script type="text/javascript" src="script/script.js"></script>
