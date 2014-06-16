@@ -30,7 +30,7 @@ public class SalesItem {
 		this.id = id;
 	}
 
-	public double getUnitPrice() {
+	public double getUnitPrice(double unitPrice) {
 		return unitPrice;
 	}
 	public void setUnitPrice(double unitPrice) {

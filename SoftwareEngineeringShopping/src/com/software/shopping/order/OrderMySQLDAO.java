@@ -1,6 +1,7 @@
 package com.software.shopping.order;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
@@ -86,6 +87,7 @@ public class OrderMySQLDAO {
 					+ (pageNo - 1) * pageSize + "," + pageSize;
 			System.out.println(sql);
 			rs = DB.executeQuery(conn, sql);
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String rsdate;
 			while (rs.next()) {
 				User u = new User();
@@ -94,9 +96,8 @@ public class OrderMySQLDAO {
 				u.setUsername(rs.getString("username"));
 				u.setPassword(rs.getString("password"));
 				u.setPhone(rs.getString("phone"));
-				rsdate = rs.getTimestamp("rdate")
+				rsdate = df.format(rs.getTimestamp("rdate"));
 				u.setRdate(rsdate);
-
 				SalesOrder so = new SalesOrder();
 				so.setId(rs.getInt("id"));
 				so.setAddr(rs.getString("addr"));
@@ -130,7 +131,8 @@ public class OrderMySQLDAO {
 					+ "join ruser on (salesorder.userid = ruser.id) where salesorder.id = "
 					+ id;
 			rs = DB.executeQuery(conn, sql);
-
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String rsdate;
 			if (rs.next()) {
 				User u = new User();
 				u.setId(rs.getInt("uid"));
@@ -138,7 +140,8 @@ public class OrderMySQLDAO {
 				u.setUsername(rs.getString("username"));
 				u.setPassword(rs.getString("password"));
 				u.setPhone(rs.getString("phone"));
-				u.setRdate(rs.getTimestamp("rdate"));
+				rsdate = df.format(rs.getTimestamp("rdate"));
+				u.setRdate(rsdate);
 
 				so = new SalesOrder();
 				so.setId(rs.getInt("id"));
@@ -175,14 +178,16 @@ public class OrderMySQLDAO {
 
 			System.out.println(sql);
 			rs = DB.executeQuery(conn, sql);
-
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String psdate;
 			while (rs.next()) {
 				Product p = new Product();
 				p.setId(rs.getInt("pid"));
 				p.setCategoryId(rs.getInt("categoryid"));
 				p.setName(rs.getString("name"));
 				p.setDescr(rs.getString("descr"));
-				p.setPdate(rs.getTimestamp("pdate"));
+				psdate = df.format(rs.getTimestamp("pdate"));
+				p.setPdate(psdate );
 				p.setNormalPrice(rs.getDouble("normalprice"));
 				p.setMemberPrice(rs.getDouble("memberprice"));
 
