@@ -3,6 +3,7 @@ package com.software.shopping.order;
 import java.sql.*;
 import java.util.List;
 
+import com.software.shopping.cart.Cart;
 import com.software.shopping.user1.User;
 
 public class SalesOrder {

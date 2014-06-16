@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 
+import com.software.shopping.cart.Cart;
+import com.software.shopping.cart.CartItem;
+import com.software.shopping.product.Product;
+import com.software.shopping.user1.User;
 import com.software.shopping.util.DB;
 
 public class OrderMySQLDAO {
@@ -20,7 +24,7 @@ public class OrderMySQLDAO {
 
 			String sql = "insert into salesorder values (null,?,?,?,?)";
 
-			pstmt = DB.getPStmt(conn, sql, true);
+			pstmt = DB.prepare(conn, sql);
 			pstmt.setInt(1, so.getUser().getId());
 			pstmt.setString(2, so.getAddr());
 			pstmt.setTimestamp(3, so.getODate());
@@ -31,7 +35,7 @@ public class OrderMySQLDAO {
 			int key = rsKey.getInt(1);
 
 			String sqlItem = "insert into salesitem values (null,?,?,?,?)";
-			pstmt = DB.getPStmt(conn, sqlItem);
+			pstmt = DB.prepare(conn, sqlItem);
 			Cart c = so.getCart();
 			List<CartItem> items = c.getItems();
 			for (int i = 0; i < items.size(); i++) {
@@ -82,7 +86,7 @@ public class OrderMySQLDAO {
 					+ (pageNo - 1) * pageSize + "," + pageSize;
 			System.out.println(sql);
 			rs = DB.executeQuery(conn, sql);
-
+            String rsdate;
 			while (rs.next()) {
 				User u = new User();
 				u.setId(rs.getInt("uid"));
@@ -90,7 +94,8 @@ public class OrderMySQLDAO {
 				u.setUsername(rs.getString("username"));
 				u.setPassword(rs.getString("password"));
 				u.setPhone(rs.getString("phone"));
-				u.setRdate(rs.getTimestamp("rdate"));
+				rsdate = rs.getTimestamp("rdate")
+				u.setRdate(rsdate);
 
 				SalesOrder so = new SalesOrder();
 				so.setId(rs.getInt("id"));

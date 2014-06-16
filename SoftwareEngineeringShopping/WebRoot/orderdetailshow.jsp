@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
-<%@ page import="com.software.shopping.*,com.software.shopping.order.SalesOrder,java.sql.*"%>
+<%@ page import="com.software.shopping.*,com.software.shopping.order.SalesOrder,com.software.shopping.order.OrderMgr,com.software.shopping.order.SalesItem,java.sql.*"%>
 <%@ include file="_sessioncheck.jsp"%>
 
 <%
@@ -26,7 +26,7 @@
 		</tr>
 		<%
 			List<SalesItem> items = so.getItems();
-			for (int i = 0; i < items.size(); i++) {
+			for(int i = 0; i < items.size(); i++) {
 				SalesItem si = items.get(i);
 		%>
 		<tr>

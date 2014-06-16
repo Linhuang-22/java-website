@@ -1,12 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
-<%@ page import="com.software.shopping.*,com.software.shopping.user1.*,com.software.shopping.order.SalesOrder,java.sql.*"%>
+<%@ page import="com.software.shopping.*,com.software.shopping.user1.*,com.software.shopping.order.SalesOrder,com.software.shopping.cart.Cart,java.sql.*"%>
 
 
 <%
 	User u = (User) session.getAttribute("user");
 %>
 
-<jsp:useBean id="cart" class="com.software.shopping.Cart" scope="session"></jsp:useBean>
+<jsp:useBean id="cart" class="com.software.shopping.cart" scope="session"></jsp:useBean>
 <%
 	if (cart = null)
 		out.println("没有任何购物项");
