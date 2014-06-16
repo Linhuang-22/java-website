@@ -1,4 +1,6 @@
-package com.bjsxt.shopping;
+package com.software.shopping.order;
+
+import com.software.shopping.product.Product;
 
 public class SalesItem {
 

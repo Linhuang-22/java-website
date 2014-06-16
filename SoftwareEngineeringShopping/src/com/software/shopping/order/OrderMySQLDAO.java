@@ -1,8 +1,11 @@
-package com.bjsxt.shopping;
+package com.software.shopping.order;
+
 
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
+
+import com.software.shopping.util.DB;
 
 public class OrderMySQLDAO {
 

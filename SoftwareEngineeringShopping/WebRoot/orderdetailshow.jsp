@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
-<%@ page import="com.bjsxt.shopping.*,java.sql.*"%>
+<%@ page import="com.software.shopping.*,com.software.shopping.order.SalesOrder,java.sql.*"%>
 <%@ include file="_sessioncheck.jsp"%>
 
 <%

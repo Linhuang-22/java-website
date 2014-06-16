@@ -1,4 +1,4 @@
-package com.bjsxt.shopping;
+package com.software.shopping.order;
 
 import java.util.List;
 
