@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
 <%@ page import="com.software.shopping.*,com.software.shopping.order.SalesOrder,com.software.shopping.order.OrderMgr,java.sql.*"%>
-<%@ include file="_sessioncheck.jsp"%>
+<%--<%@ include file="_sessioncheck.jsp"%> --%>
 
 <%!private static final int PAGE_SIZE = 3;%>
 
@@ -16,8 +16,7 @@
 
 <%
 	List<SalesOrder> orders = new ArrayList<SalesOrder>();
-	int pageCount = OrderMgr.getInstance().getOrders(orders, pageNo,
-			PAGE_SIZE);
+	int pageCount = OrderMgr.getInstance().getOrders(orders, pageNo,PAGE_SIZE);
 
 	if (pageNo > pageCount)
 		pageNo = pageCount;

@@ -6,11 +6,13 @@
 	User u = (User) session.getAttribute("user");
 %>
 
-<jsp:useBean id="cart" class="com.software.shopping.cart" scope="session"></jsp:useBean>
+<jsp:useBean id="cart" class="com.software.shopping.cart.Cart" scope="session"></jsp:useBean>
 <%
-	if (cart = null)
-		out.println("没有任何购物项");
-	return;
+if (cart == null)
+{
+out.println("没有任何购物项");
+return;
+}
 %>
 
 

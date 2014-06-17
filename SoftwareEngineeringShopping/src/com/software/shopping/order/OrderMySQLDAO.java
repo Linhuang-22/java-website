@@ -194,7 +194,7 @@ public class OrderMySQLDAO {
 				SalesItem si = new SalesItem();
 				si.setOrder(order);
 				si.setId(rs.getInt("itemid"));
-				si.getUnitPrice(rs.getDouble("unitprice"));
+				si.setUnitPrice(rs.getDouble("unitprice"));
 				si.setCount(rs.getInt("pcount"));
 				si.setProduct(p);
 

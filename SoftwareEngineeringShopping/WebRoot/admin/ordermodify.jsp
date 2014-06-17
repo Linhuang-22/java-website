@@ -9,7 +9,7 @@
 	String action = request.getParameter("action");
 	if(action != null && action.equals("modify"))
 	{
-	   int status = Integer.parseInt(request.getParameter(status));
+	   int status = Integer.parseInt(request.getParameter("status"));
 	   so.setStatus(status);
 	   so.updateStatus();
 	}
