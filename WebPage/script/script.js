@@ -114,6 +114,15 @@
 	}
 })(jQuery);
 
+(function() {
+	jQuery.changeInfo = function(btn) {
+		var $btn = $(btn);
+		$btn.on("click", function() {
+			$(this).prev().removeAttr("disabled").parents(".info").siblings("input").show();
+		})
+	}
+})(jQuery);
+
 $(document).ready(function() {
 	var $hotsale = $("#hotsale");
 	if (!!$hotsale.html()) {

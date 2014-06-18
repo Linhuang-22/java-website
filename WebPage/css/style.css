@@ -538,8 +538,8 @@ table {
 
 /* CSS Reset End */
 
-.ins {
-    text-decoration: none;
+.unl {
+    text-decoration: underline;
 }
 .del {
     /* 删除线 */
@@ -565,6 +565,11 @@ ul,li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+input[disabled],
+textarea[disabled] {
+	border: 1px solid #ccc;
+	background: #f1f1f1;
 }
 .container {
 	width: 1000px;
@@ -900,4 +905,27 @@ footer p {
 	color: #f1f1f1;
 	text-align: center;
 	background: #ccc;
+}
+
+/* 用户个人页 */
+.info {
+	margin: 1em 0;
+}
+.info input,
+.info textarea {
+	width: 80%;
+	max-width: 80%;
+	resize: none;
+}
+.info textarea {
+	height: 3em;
+}
+.info a {
+	display: inline;
+	font-size: .875em;
+	color: #2980B9;
+}
+.info a:hover {
+	height: auto;
+	border: none;
 }
