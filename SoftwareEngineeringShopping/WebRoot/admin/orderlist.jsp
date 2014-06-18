@@ -16,7 +16,7 @@
 
 <%
 	List<SalesOrder> orders = new ArrayList<SalesOrder>();
-	int pageCount = OrderMgr.getInstance().getOrders(orders, pageNo,PAGE_SIZE);
+	int pageCount = OrderMgr.getInstance().getOrders(orders, pageNo, PAGE_SIZE);
 
 	if (pageNo > pageCount)
 		pageNo = pageCount;

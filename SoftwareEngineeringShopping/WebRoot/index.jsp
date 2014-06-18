@@ -20,8 +20,16 @@
 			<div class="logo">
 				<a href="#"><img src="images/logo.jpg" alt="联想网上商城" title="联想网上商城" /></a>
 			</div>
+			
 			<div class="welcome">
-				<p>欢迎您来到联想网上商城！请 <a href="loginOrReg.jsp">[登录]</a> 或者 <a href="loginOrReg.jsp">[免费注册]</a></p>
+			    if()
+			    {
+				  <p>欢迎您来到联想网上商城！请 <a href="loginOrReg.jsp">[登录]</a> 或者 <a href="loginOrReg.jsp">[免费注册]</a></p>
+			    }
+			    else
+			    {
+			      <p>欢迎您来到联想网上商城！请 <a href="loginOrReg.jsp">[登录]</a> 或者 <a href="loginOrReg.jsp">[免费注册]</a></p>
+			    }
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -70,7 +78,7 @@
 				<h1>分类一</h1>
 				<ul>
 					<li>
-						<a href="#">
+						<a href="productdetailshow.jsp">
 							<img src="images/laptop.jpg" alt="产品名称" title="产品名称" />
 							<span class="price">￥5900</span>
 							<span class="name">Yoga2 13-ITH (日光橙)</span>
