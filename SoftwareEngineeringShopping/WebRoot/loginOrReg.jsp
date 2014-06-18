@@ -21,7 +21,7 @@ if(action != null && action.equals("login")) {
 	}
 	
 	session.setAttribute("user", u);
-	response.sendRedirect("selfService.jsp");
+	response.sendRedirect("index.jsp");
 }
 %>
 
