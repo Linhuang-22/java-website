@@ -2,7 +2,8 @@
 /* CSS Document */
 nav li,
 .focus ul li,
-.focus .btn span {
+.focus .btn span,
+ul.order-list li div {
 	*display: inline;
     *zoom: 1;
 }
