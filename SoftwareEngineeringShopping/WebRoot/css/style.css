@@ -538,8 +538,8 @@ table {
 
 /* CSS Reset End */
 
-.ins {
-    text-decoration: none;
+.unl {
+    text-decoration: underline;
 }
 .del {
     /* 删除线 */
@@ -565,6 +565,11 @@ ul,li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+input[disabled],
+textarea[disabled] {
+	border: 1px solid #ccc;
+	background: #f1f1f1;
 }
 .container {
 	width: 1000px;
@@ -593,7 +598,7 @@ header .container {
 	color: #525252;
 }
 .welcome a {
-	color: #525252;
+	color: #2980b9;
 }
 nav {
 	background: #dc291e;
@@ -669,12 +674,8 @@ nav ul.second > li {
 }
 .focus .btn span {
     display:inline-block;
-    /*_display:inline;
-    _zoom:1;*/
     width:16px;
     height:16px;
-    /*line-height:12px;
-    text-align:center;*/
     _font-size:0;
     margin: 0px 6px;
     cursor:pointer;
@@ -900,4 +901,55 @@ footer p {
 	color: #f1f1f1;
 	text-align: center;
 	background: #ccc;
+}
+
+/* 用户个人页 */
+.info {
+	margin: 1em 0;
+}
+.info input,
+.info textarea {
+	width: 80%;
+	max-width: 80%;
+	resize: none;
+}
+.info textarea {
+	height: 3em;
+}
+.info a {
+	display: inline;
+	font-size: .875em;
+	color: #2980B9;
+}
+.info a:hover {
+	height: auto;
+	border: none;
+}
+
+ul.order-list {
+	float: none;
+}
+ul.order-list li {
+	float: none;
+	width: auto;
+	font-size: 0;
+}
+ul.order-list li div {
+	display: inline-block;
+	font-size: 16px;
+	vertical-align: top;
+}
+ul.order-list li div span {
+	display: block;
+	padding: .5em 0;
+	text-align: center;
+}
+.order-name {
+	width: 70%;
+}
+.order-price {
+	width: 15%;
+}
+.order-status {
+	width: 15%;
 }
