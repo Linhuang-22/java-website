@@ -12,15 +12,15 @@ if(u == null) {
 request.setCharacterEncoding("GB18030");
 String action  = request.getParameter("action");
 if (action != null && action.equals("modify")){
-	String username = request.getParameter("username");
 	String phone = request.getParameter("phone");
 	String addr = request.getParameter("addr");
-	u.setUsername(username);
 	u.setPhone(phone);
 	u.setAddr(addr);
 	u.update();
 	out.println("修改成功!");
+	response.sendRedirect("userModify.jsp");
 	return;
+	
 }
 %>
 
@@ -45,7 +45,7 @@ if (action != null && action.equals("modify")){
 				<a href="#"><img src="images/logo.jpg" alt="联想网上商城" title="联想网上商城" /></a>
 			</div>
 			<div class="welcome">
-				<p><a href="#">[用户名]</a>，查看<a href="#">[我的订单]</a>，<a href="#">注销</a></p>
+				<p><a href="#"><%=u.getUsername() %></a>，查看<a href="#">[我的订单]</a>，<a href="#">注销</a></p>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -76,17 +76,29 @@ if (action != null && action.equals("modify")){
 		<article class="main" role="main">
 			<section class="detail">
 				<h1>个人信息</h1>
+				
+				
+				
+			<form method="post" name="form" action="userModify.jsp" onSubmit="return checkdata()">
+			<input type="hidden" name="action" value="modify"/>
+				
 				<div class="info">
 					<span>电话号码：</span>
-					<input type="text" value="12345678" disabled="disabled" />
+					<input type="text" value=<%=u.getPhone() %> name="phone" disabled="disabled" />
 					<a class="change-info" href="javascript:;">修改</a>
 				</div>
 				<div class="info">
 					<span>送货地址：</span>
-					<textarea disabled="disabled">这里是送货地址~~</textarea>
+					<textarea name="addr" disabled="disabled"><%=u.getAddr() %></textarea>
 					<a class="change-info" href="javascript:;">修改</a>
 				</div>
-				<input type="submit" class="submit" value="确认修改" style="display: none;" />
+				<input type="submit" class="submit" value="确认修改" style="display:none" />
+				
+			</form>	
+				
+				
+				
+				
 			</section>
 			<section class="detail">
 				<h1>修改密码</h1>
