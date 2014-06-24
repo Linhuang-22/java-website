@@ -2,52 +2,51 @@ package com.software.shopping.order;
 
 import java.util.List;
 
+import com.software.shopping.cart.Cart;
+import com.software.shopping.user1.User;
+
 public class OrderMgr {
-	private static OrderMgr om = null;
-	private int pageCount = 0;
-
-	static {
-		if (om == null) {
-			om = new OrderMgr();
-			om.setDao(new OrderMySQLDAO());
-		}
-	}
-
-	private OrderMgr() {
-	}
-
+	
+	private static OrderMgr mgr = null;
+	
+	private static OrderDAO dao = new OrderMySQLDAO(); 
+	
+	private OrderMgr() {}
+	
 	public static OrderMgr getInstance() {
-		return om;
+		if(mgr == null) {
+			mgr = new OrderMgr();
+		}
+		return mgr;
 	}
-
-	OrderMySQLDAO dao = null;
-
-	public OrderMySQLDAO getDao() {
-		return dao;
+	
+	public int add(SalesOrder so) {
+		return dao.add(so);
 	}
-
-	public void setDao(OrderMySQLDAO dao) {
-		this.dao = dao;
+	
+	public int userBuy(Cart c, User u) {
+		return u.buy(c);
 	}
-
-	public void saveOrder(SalesOrder so) {
-		dao.saveOrder(so);
-	}
-
-	public int getOrders(List<SalesOrder> list, int pageNo, int pageSize) {
+	
+	public int getOrders(List<SalesOrder> list, int pageNo, int pageSize){
 		return dao.getOrders(list, pageNo, pageSize);
 	}
-
+	
 	public SalesOrder loadById(int id) {
 		return dao.loadById(id);
 	}
-
+	
 	public List<SalesItem> getSalesItems(SalesOrder order) {
-		return dao.getSalesItems(order);
+		return dao.getSalesItems(order.getId());
 	}
 
 	public void updateStatus(SalesOrder order) {
 		dao.updateStatus(order);
-		
+		//可以用dao.update来更新整个对象，这是一种更普遍的用法
+	}
+
+	public void saveOrder(SalesOrder so) {
+		// TODO Auto-generated method stub
+		dao.saveOrder(so);
 	}
 }

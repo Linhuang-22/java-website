@@ -776,6 +776,45 @@ nav ul.second > li {
 .configuration {
 	font-size: .875em;
 }
+
+.detail-img {
+	float: left;
+	width: 60%;
+	margin-top: 1em;
+}
+.detail-img img {
+	width: 100%;
+}
+.detail-con {
+	float: right;
+	width: 40%;
+	margin-top: 1em;
+}
+.detail-con p {
+	display: block;
+	margin: 0;
+	padding: 1em .5em;
+	
+	border-bottom: 1px dashed #ccc;
+	letter-spacing: 2px;
+}
+.buy {
+	padding: 1em;
+}
+.buy a {
+	height: auto;
+	padding: 1em;
+	text-align: center;
+	color: #f1f1f1;
+	background: #dc291e;
+}
+.buy a:hover {
+	height: auto;
+	border: none;
+	color: #fff;
+	background: #e74c3c;
+}
+
 aside {
 	float: left;
 	width: 186px;

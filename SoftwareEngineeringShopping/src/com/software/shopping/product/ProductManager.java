@@ -43,7 +43,6 @@ public class ProductManager {
 	}
 
 	public List<Product> getProducts() {
-		
 		return dao.getProducts();
 	}
 	

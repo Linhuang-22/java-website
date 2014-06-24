@@ -1,6 +1,5 @@
 package com.software.shopping.product;
 
-import java.sql.Timestamp;
 import com.software.shopping.category.*;
 
 public class Product {

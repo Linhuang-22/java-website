@@ -1,10 +1,11 @@
 package com.software.shopping.cart;
+import com.software.shopping.product.Product;
 
 public class CartItem {
 	int productId;
 	int count;
 	double price;
-	
+	private Product product;
 	public int getProductId() {
 		return productId;
 	}
@@ -28,4 +29,7 @@ public class CartItem {
 		return price*count;
 	}
 
+	public Product getProduct() {
+		return product;
+	}
 }

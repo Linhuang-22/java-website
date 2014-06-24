@@ -14,10 +14,45 @@ else
 	flag = false;
 }
 %>
- 
+<%!
+private String getSecondCategoryStr(List<Category> categories, Category topCategory)
+{
+	StringBuffer buf = new StringBuffer();
+	
+	int childCount = 1;
+	
+	for(int i = 0; i < categories.size(); i ++){
+		Category c = categories.get(i);
+		if(c.getPid() == topCategory.getId()){
+			buf.append("document.form2.category2.options[" + childCount + "].text = '" + c.getName() + "';\n");
+			buf.append("document.form2.category2.options[" + childCount + "].value = '" + c.getId() + "';\n");
+			childCount ++;
+		}
+	}
+	
+	buf.insert(0, "document.form2.category2.options[0].text = '请选择二级目录';\n");
+	buf.insert(0, "document.form2.category2.options[0].value = '-1';\n");
+	buf.insert(0, "document.form2.category2.selectedIndex = 0 ;\n");
+	buf.insert(0, "document.form2.category2.options.length = " + childCount + ";\n");
+	buf.insert(0, "if(document.form2.category1.options[document.form2.category1.selectedIndex].value == " + topCategory.getId() + ") {\n");
+	buf.append("}\n");
+	
+	return buf.toString();
+}
+ %>
+  
 <%
 List<Product> allProducts = ProductManager.getInstance().getProducts();
 List<Category> categories = Category.getCategories();
+List<Category> topCategories = new ArrayList<Category>();
+String str = "";
+for(int i = 0; i < categories.size(); i ++){
+	Category c  = categories.get(i);
+	if(c.getGrade() == 1){
+		topCategories.add(c);
+		str += getSecondCategoryStr(categories,c);
+	}
+}
 %>
 
 <!doctype html>

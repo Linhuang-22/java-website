@@ -73,7 +73,7 @@ if (action != null && action.equals("register")){
 				<a href="#"><img src="images/logo.jpg" alt="联想网上商城" title="联想网上商城" /></a>
 			</div>
 			<div class="welcome">
-				<p>欢迎您来到联想网上商城！请 <a href="loginOrReg.jsp">[登录]</a> 或者 <a href="loginOrReg.jsp">[免费注册]</a></p>
+				
 			</div>
 			<div class="clear"></div>
 		</div>

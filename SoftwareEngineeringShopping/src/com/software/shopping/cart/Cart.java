@@ -6,6 +6,7 @@ import java.util.List;
 import com.sun.mail.imap.protocol.Item;
 
 public class Cart {
+	
 	private List<CartItem> items = new ArrayList<CartItem>();
 	
 	public List<CartItem> getItems(){
@@ -17,6 +18,7 @@ public class Cart {
 	}
 	
 	public void add(CartItem item){
+		
 		for(int i = 0; i < items.size(); i ++)
 		{
 			CartItem ci = items.get(i);

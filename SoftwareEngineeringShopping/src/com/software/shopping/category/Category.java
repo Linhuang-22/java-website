@@ -1,12 +1,9 @@
 package com.software.shopping.category;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
 import java.util.*;
 
 
-import com.software.shopping.util.DB;
 
 public class Category {
 	

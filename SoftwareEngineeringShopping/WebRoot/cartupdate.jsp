@@ -47,16 +47,17 @@ for(int i = 0; i < items.size(); i ++){
 <div id="num"></div>
 </center>
 <script language="javascript">
-	var leftTime = 5000;
-	function go(){
-		document.getElementById("num").innerText = leftTime/1000;
-		leftTime -= 1000;
-		if(leftTime <= 0){
-			document.location.href = "cart.jsp";
-		}
-	}
+document.location.href = "cart.jsp";
+	//var leftTime = 5000;
+	//function go(){
+	//	document.getElementById("num").innerText = leftTime/1000;
+	//	leftTime -= 1000;
+	//	if(leftTime <= 0){
+	//		document.location.href = "cart.jsp";
+	//	}
+	//}
 	
-	setInterval(go,1000);
+	//setInterval(go,1000);
 </script>
 
 

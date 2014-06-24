@@ -21,6 +21,5 @@ ci.setProductId(id);
 ci.setPrice(p.getNormalPrice()); // need to check if the user logged in
 ci.setCount(1);
 cart.add(ci);
-
 response.sendRedirect("cart.jsp");
 %>

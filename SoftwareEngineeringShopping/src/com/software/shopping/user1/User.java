@@ -1,16 +1,22 @@
 package com.software.shopping.user1;
 
 import java.sql.Connection;
+import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.software.shopping.util.DB;
+
+import com.software.shopping.cart.Cart;
+import com.software.shopping.cart.CartItem;
+import com.software.shopping.order.OrderMgr;
+import com.software.shopping.order.SalesItem;
+import com.software.shopping.order.SalesOrder;
+
 
 public class User {
 	private int id;
@@ -204,6 +210,27 @@ public class User {
 			DB.closeStmt(pstmt);
 			DB.closeConn(conn);
 		}
+	}
+	
+	public int buy(Cart c) {
+		SalesOrder so = new SalesOrder();
+		so.setUser(this);
+		so.setAddr(this.getAddr());
+		so.setStatus(0);
+		
+		so.setODate("2014-11-11");
+		List<SalesItem> salesItems = new ArrayList<SalesItem>();
+		List<CartItem> cartItems = c.getItems();
+		for(int i=0; i<cartItems.size(); i++) {
+			SalesItem si = new SalesItem();
+			CartItem ci = cartItems.get(i);
+			si.setProduct(ci.getProduct());
+			si.setCount(ci.getCount());
+			si.setUnitPrice(ci.getProduct().getMemberPrice());
+			salesItems.add(si);
+		}
+		so.setItems(salesItems);
+		return OrderMgr.getInstance().add(so); 
 	}
 
 }

@@ -1,104 +1,77 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
-<%@ page import="com.software.shopping.*,com.software.shopping.order.SalesOrder,com.software.shopping.order.OrderMgr,java.sql.*"%>
-<%--<%@ include file="_sessioncheck.jsp"%> --%>
+<%@ page language="java" contentType="text/html; charset=GB18030"
+    pageEncoding="GB18030"%>
+<%@ page import="java.sql.*, com.software.shopping.order.*, java.util.*" %>
 
-<%!private static final int PAGE_SIZE = 3;%>
-
-<%
-	String strPageNo = request.getParameter("pageno");
-	int pageNo = 1;
-	if (strPageNo != null) {
-		pageNo = Integer.parseInt(strPageNo);
-	}
-	if (pageNo < 1)
-		pageNo = 1;
+<%!
+private static final int PAGE_SIZE = 2;
 %>
 
 <%
-	List<SalesOrder> orders = new ArrayList<SalesOrder>();
-	int pageCount = OrderMgr.getInstance().getOrders(orders, pageNo, PAGE_SIZE);
-
-	if (pageNo > pageCount)
-		pageNo = pageCount;
+String strPageNo = request.getParameter("pageno");
+int pageNo = 1;
+if(strPageNo != null) {
+	pageNo = Integer.parseInt(strPageNo);
+}
+if(pageNo < 1) pageNo = 1;
 %>
-
 
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+//get all the users
+List<SalesOrder> orders = new ArrayList<SalesOrder>();
+int totalRecords = OrderMgr.getInstance().getOrders(orders, pageNo, PAGE_SIZE);
+
+int totalPages = (totalRecords + PAGE_SIZE - 1) / PAGE_SIZE;
+if(pageNo > totalPages) pageNo = totalPages;
 %>
 
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<base href="<%=basePath%>">
-
-<title>My JSP 'orderlist.jsp' starting page</title>
-
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+<meta http-equiv="Content-Type" content="text/html; charset=GB18030">
+<title>Insert title here</title>
 </head>
-
 <body>
-	<table border=1 align=center>
+	<table border="1" align="center">
 		<tr>
 			<td>ID</td>
 			<td>username</td>
 			<td>addr</td>
 			<td>odate</td>
 			<td>status</td>
+
+			<td></td>
 		</tr>
 		<%
-			for (Iterator<SalesOrder> it = orders.iterator(); it.hasNext();) {
-				SalesOrder so = it.next();
+		for(Iterator<SalesOrder> it = orders.iterator(); it.hasNext(); ) {
+			SalesOrder so = it.next();
 		%>
-		<tr>
-			<td><%=so.getId()%></td>
-			<td><%=so.getUser().getUsername()%></td>
-			<td><%=so.getAddr()%></td>
-			<td><%=so.getODate()%></td>
-			<td><%=so.getStatus()%></td>
-			<td><a href="orderdetailshow.jsp?id=<%=so.getId()%>" target="detail">订单明细</a>
-			    &bsp;
-			    <a href="ordermodify.jsp?id=<%=so.getId()%>" target="detail">订单修改</a>
-			</td>
-		</tr>
+			<tr>
+				<td><%=so.getId() %></td>
+				<td><%=so.getUser().getUsername() %></td>
+				<td><%=so.getAddr() %></td>
+<!-- 				<td><%=so.getODate() %></td> -->
+				<td><%=so.getStatus() %></td>
+				<td>
+					<a href="orderdetailshow.jsp?id=<%=so.getId()%>" >订单明细</a>
+					&nbsp;
+					<a href="ordermodify.jsp?id=<%=so.getId()%>">订单修改</a>
+				</td>
+			</tr>
 		<%
-			}
+		}
 		%>
 	</table>
 	<center>
-		第<%=pageNo%>页 &bsp; 共<%=pageCount%>页 &bsp; <a
-			href="productlist.jsp?pageno=<%=pageNo - 1%>">上一页</a> &bsp; <a
-			href="productlist.jsp?pageno=<%=pageNo + 1%>">下一页</a> &bsp; <a
-			href="productlist.jsp?pageno=<%=pageCount%>">最后一页</a>
+		第<%=pageNo %>页
+		&nbsp;
+		共<%=totalPages %>页
+		&nbsp;
+		<a href="OrderList.jsp?pageno=<%=pageNo-1 %>">上一页</a>
+		&nbsp;
+		<a href="OrderList.jsp?pageno=<%=pageNo+1 %>">下一页</a>
+		&nbsp;
+		<a href="OrderList.jsp?pageno=<%=totalPages %>">最后一页</a>
 	</center>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

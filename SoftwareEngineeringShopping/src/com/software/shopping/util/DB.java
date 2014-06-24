@@ -6,7 +6,7 @@ public class DB {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shopping","root","dallas87201356");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shopping?user=root&password=");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -51,6 +51,7 @@ public class DB {
 		}
 		return stmt;
 	}
+	
 	
 	/*
 	public static ResultSet getResultSet(Connection conn, String sql) {

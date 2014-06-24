@@ -44,9 +44,7 @@ if (action != null && action.equals("modify")){
 			<div class="logo">
 				<a href="#"><img src="images/logo.jpg" alt="联想网上商城" title="联想网上商城" /></a>
 			</div>
-			<div class="welcome">
-				<p><a href="#"><%=u.getUsername() %></a>，查看<a href="#">[我的订单]</a>，<a href="#">注销</a></p>
-			</div>
+			<jsp:include page="welcome.jsp"></jsp:include>
 			<div class="clear"></div>
 		</div>
 		<nav role="navigation">

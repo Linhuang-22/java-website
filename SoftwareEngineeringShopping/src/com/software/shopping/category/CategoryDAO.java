@@ -3,7 +3,6 @@ package com.software.shopping.category;
 import java.sql.*;
 import java.util.List;
 
-import com.software.shopping.*;
 import com.software.shopping.util.DB;
 
 public class CategoryDAO {
